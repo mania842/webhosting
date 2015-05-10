@@ -9,9 +9,12 @@
 	var module = angular.module('myApp', [ 'ngRoute', 'ngSanitize', 'buffetModule' ]);
 
 	// Configure app
-	module.config(function($routeProvider) {
+	module.config(function($routeProvider, webId) {
 		$routeProvider.when('/', { /*templateUrl : 'ng/common/html/main.html'*/
-			redirectTo: '/buffet/menu/gainesvillehomecooking'
+			redirectTo: '/buffet/menu/gainesvillehomecooking',
+			resolve: {
+				webId.loadWebData("gainesvillehomecooking");
+			}
 		})
 		.when('/test', { templateUrl : 'ng/common/html/test.html' })
 		.when('/location/:homepage', {
