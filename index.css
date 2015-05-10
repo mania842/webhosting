@@ -50,7 +50,7 @@ fieldset legend
 .app-ngview
 {
 	background-color: #F7F7F7;
-    position: fixed;
+    position: relative;
     top: 5.5em;
     bottom: 4em;
     left: 0;
