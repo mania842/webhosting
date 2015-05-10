@@ -51,7 +51,7 @@ fieldset legend
 {
     display: block;
 	background-color: #F7F7F7;
-    position: absolute;
+    position: relative;
     top: 5.5em;
     bottom: 4em;
     left: 0;
