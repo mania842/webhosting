@@ -10,7 +10,9 @@
 
 	// Configure app
 	module.config(function($routeProvider) {
-		$routeProvider.when('/', { templateUrl : 'ng/common/html/main.html' })
+		$routeProvider.when('/', { /*templateUrl : 'ng/common/html/main.html'*/
+			redirectTo: '/buffet/menu/:gainesvillehomecooking'
+		})
 		.when('/test', { templateUrl : 'ng/common/html/test.html' })
 		.when('/location/:homepage', {
 			templateUrl: 'ng/common/html/location.html',
