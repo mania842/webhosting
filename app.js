@@ -14,20 +14,18 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
 	})
 
 	// nested list with custom controller
-	.state(
-			'home.list',
-			{
-				url : '/list',
-				templateUrl : 'partial-home-list.html',
-				controller : function($scope) {
-					$scope.dogs = [ 'Bernese', 'Husky', 'Goldendoodle',
-							'Bernese1', 'Husky1', 'Goldendoodle1', 'Bernese2',
-							'Husky2', 'Goldendoodle2', 'Bernese3', 'Husky3',
-							'Goldendoodle3', 'Bernese4', 'Husky4',
-							'Goldendoodle4', 'Bernese5', 'Husky5',
-							'Goldendoodle5' ];
-				}
-			})
+	.state('home.list', {
+		url : '/list',
+		templateUrl : 'partial-home-list.html',
+		controller : function($scope) {
+		$scope.dogs = [ 'Bernese', 'Husky', 'Goldendoodle',
+		                'Bernese1', 'Husky1', 'Goldendoodle1', 'Bernese2',
+						'Husky2', 'Goldendoodle2', 'Bernese3', 'Husky3',
+						'Goldendoodle3', 'Bernese4', 'Husky4',
+						'Goldendoodle4', 'Bernese5', 'Husky5',
+						'Goldendoodle5' ];
+		}
+	})
 
 	// nested list with just some random string data
 	.state('home.paragraph', {
