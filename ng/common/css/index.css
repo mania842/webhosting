@@ -52,11 +52,12 @@ fieldset legend
     /* display: block; */
 	background-color: #F7F7F7;
     /* position: relative; */
-    top: 5.5em;
+    margin-top:5.5em;
+    /* top: 5.5em;
     bottom: 4em;
     left: 0;
-    right: 0;
-    overflow: auto;
+    right: 0; */
+    /* overflow: auto; */
 }
 
 .header-title
