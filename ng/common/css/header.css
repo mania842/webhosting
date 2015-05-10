@@ -1,6 +1,6 @@
 .web-landing-header
 {
-    position: absolute;
+    position: fixed;
     top: 0;
 	height: 5em;
     left: 0;
