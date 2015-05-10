@@ -1,7 +1,7 @@
 .web-landing-footer-menubar
 {
 	text-align: right;
-	position: absolute;
+	position: fixed;
 	bottom: 1em;
 	left: 0;
 	right: 0;
@@ -61,7 +61,7 @@
 
 .web-landing-footer-legal
 {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
