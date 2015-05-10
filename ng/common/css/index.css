@@ -5,7 +5,6 @@ html,body
     height: 100%;
     width: 100%;
     font-family: sans-serif;
-    font-size: 100%;
 }
 
 body {
@@ -16,6 +15,7 @@ body {
   padding: 0;
   height: 100%;
   width: 100%;
+  overflow: hidden;
   /* background: url(images/body-background.png) #eae6d1; */
 }
 
@@ -49,17 +49,15 @@ fieldset legend
 
 .app-ngview
 {
+    display: block;
 	background-color: #F7F7F7;
-    position: relative;
+    position: absolute;
     top: 5.5em;
     bottom: 4em;
     left: 0;
     right: 0;
     overflow: auto;
 }
-/* .container {
-	overflow: auto;
-} */
 
 .header-title
 {
@@ -79,11 +77,11 @@ fieldset legend
  * Common
  */
 
-./* container {
+.container {
     width: 100%;
     padding: 0px;
     height: 100%;
- } */
+ }
  
  .center-screen {
 	text-align: center;

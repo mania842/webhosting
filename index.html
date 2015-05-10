@@ -1,44 +1,58 @@
-<!-- index.html -->
-
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html xmlns:ng="http://angularjs.org" ng:app="myApp" ng:controller="HomeController">
 <head>
-
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="chrome=1">
+	<!-- <meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0"> -->
+		
 	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimal-ui" />
-    <!-- CSS (load bootstrap) -->
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="index.css" type="text/css" />
-    <style>
-        .navbar { border-radius:0; }
-    </style>
-
-    <!-- JS (load angular, ui-router, and our custom js file) -->
-    <script src="http://code.angularjs.org/1.2.13/angular.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
-    <script src="app.js"></script>
+	<title>{{ page.title() }}</title>
+	<!-- <link rel="stylesheet" href="stylesheets/styles.css"> -->
+	<link rel="stylesheet" href="stylesheets/pygment_trac.css">
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-sanitize.js"></script>
+	<script src='https://maps.googleapis.com/maps/api/js?sensor=false'></script>
+	
+	
+	<!-- common module -->
+	<link rel="stylesheet" href="ng/common/css/index.css" type="text/css" />
+	<link rel="stylesheet" href="ng/common/css/header.css" type="text/css" />
+	<link rel="stylesheet" href="ng/common/css/footer.css" type="text/css" />
+	<script src="ng/common/module/module.js"></script>
+	<!-- Controllers -->
+	<script src="ng/common/controller/Footer.js"></script>
+	<script src="ng/common/controller/Header.js"></script>
+	<script src="ng/common/controller/mainController.js"></script>
+	<script src="ng/common/controller/locationController.js"></script>
+	<script src="ng/common/controller/aboutController.js"></script>
+	<!-- Directives -->
+	<script src="ng/common/directives/myMap.js"></script>
+	<!-- Services -->
+	<script src="ng/common/service/webId.js"></script>
+	
+	<!-- buffet module -->
+	<link rel="stylesheet" href="ng/buffet/css/buffet-menu.css" type="text/css" />
+	<script src="ng/buffet/module/module.js"></script>
+	<!-- Controllers -->
+	<script src="ng/buffet/controller/buffetMenuController.js"></script>
+	<script src="ng/buffet/controller/buffetPriceController.js"></script>
+	
+	<!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+	
 </head>
-
-<!-- apply our angular app to our site -->
-<body ng-app="routerApp">
-
-<!-- NAVIGATION -->
-<!-- <nav class="navbar navbar-inverse" role="navigation">
-    <div class="navbar-header">
-        <a class="navbar-brand" ui-sref="#">AngularUI Router</a>
-    </div>
-    <ul class="nav navbar-nav">
-        <li><a ui-sref="home">Home</a></li>
-        <li><a ui-sref="about">About</a></li>
-    </ul>
-</nav> -->
-
-<!-- MAIN CONTENT -->
-<div class="container">
-
-    <!-- THIS IS WHERE WE WILL INJECT OUR CONTENT ============================== -->
-    <div class="app-ngview" ui-view></div>
-
-</div>
-
+<body>
+	<!-- Header -->
+    <ng:include src="'ng/common/html/header.html'"></ng:include>
+    <!-- App area -->
+	<div class="app-ngview" ng:view></div>
+	<!-- Footer -->
+	<ng:include src="'ng/common/html/footer.html'"></ng:include>
+	
 </body>
 </html>

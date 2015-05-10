@@ -1,0 +1,33 @@
+<div class="web-landing-header" ng:controller="webHeaderController">
+	<!-- Header -->
+	<div class="web-landing-header-header">
+		<div class="web-landing-header-header-title">
+			<img ng:click="redirectToHome()"
+			ng-src="{{logo}}" ng-show="logo"/>
+			<label1>{{hs.header}}</label1>
+		</div>
+		<span>{{$root.admin.web.getAddress()}}</span>
+		
+		
+		<!-- <div class="web-landing-header-line2" />
+		<div class="web-landing-header-line1" /> -->
+		<div class="web-landing-header-menubar">
+			
+			<h1 ng-style="getHeaderStyle()">{{hs.title}}</h1>
+			<!-- <div class="csmd-header-title-message"
+				ng-show="hs.isMobile && hs.message.length > 0">{{hs.message}}
+			</div>
+			<div class="web-landing-header-rhs">
+				<small><small><small>
+				<button class="csmd-button" ng-click="bones.redirect('/report/UploadReport')" ng:show="$root.csmd.user.hasRole('ADMIN')">Upload Report File</button>
+				</small></small></small>
+			</div> -->
+		</div>
+		<!-- <div id="spinner" ng-style="getTop()" ng-show="hs.isLoading"></div>
+		<popdown></popdown> -->
+	</div>
+	<div class="web-landing-header-menubar-line">
+		<a class="phone" href='{{hs.CALL}}'>{{hs.PHONE}}</a>
+		
+	</div>
+</div>

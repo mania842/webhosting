@@ -1,0 +1,15 @@
+<div class="web-landing-footer" ng:controller="webFooterController">
+
+  <!-- Icon based menubar at the footer -->
+  <nav class="web-landing-footer-menubar">
+  	<span ng-repeat="item in items" ng-class="{activeTab : isSelected(item)}" ng-click="buttonClicked(item)">
+  		<!-- <span class="{{section.imgName}}"></span> -->
+      <label>{{item.NAME}}</label>
+    </span>
+  </nav>
+  
+  <!-- Legal notice -->
+  <div class="web-landing-footer-legal">
+    <span>POWERED BY J&Y</span>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+{
+	"DOMAIN" : "gainesvillehomecooking",
+	"TITLE" : "Gainesville Home Cooking",
+	"FOOTER" : [ {
+		"NAME" : "Menu",
+		"PATH" : "/buffet/menu/"
+	}, {
+		"NAME" : "Price",
+		"PATH" : "/buffet/price/"
+	}, {
+		"NAME" : "Location",
+		"PATH" : "/buffet/location/"
+	}, {
+		"NAME" : "About",
+		"PATH" : "/buffet/about/"
+	}]
+}

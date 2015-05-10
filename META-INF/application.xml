@@ -1,0 +1,11 @@
+<application>
+  <display-name>websample</display-name>
+
+  <module>
+    <web>
+      <web-uri>websample.war</web-uri>
+      <context-root>/websample</context-root>
+    </web>
+  </module>
+
+</application>
