@@ -18,7 +18,7 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
         url: '/list',
         templateUrl: 'partial-home-list.html',
         controller: function($scope) {
-            $scope.dogs = ['Bernese', 'Husky', 'Goldendoodle'];
+            $scope.dogs = ['Bernese', 'Husky', 'Goldendoodle', 'Bernese1', 'Husky1', 'Goldendoodle1', 'Bernese2', 'Husky2', 'Goldendoodle2', 'Bernese3', 'Husky3', 'Goldendoodle3'];
         }
     })
 
