@@ -9,11 +9,8 @@
 //    	$scope.data = webId.getWeb();
     	
     	
-    	$scope.call = function() {
-    		window.open('tel:917-504-9043');
-    	};
-    	$anchorScroll.yOffset = 200;
-    	$scope.menuBarClick = function(day) {
+    	
+    	$scope.menuBarClick = function(day, index) {
     		$location.hash(day);
     	    // call $anchorScroll()
     	    $anchorScroll();
@@ -23,6 +20,8 @@
 		    var emSize = parseFloat($("body").css("font-size"));
 		    return (emSize * input);
 		};
+		
+		$anchorScroll.yOffset = em(8);
 		var elementResult = document.getElementsByClassName('weekly-menu-fix')[0];
 		
     	$scope.getTop = function() {

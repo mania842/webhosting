@@ -1,7 +1,7 @@
 <div class="weekly-menu-main-side">
 	<div class="weekly-menu-fix" on-size-changed="logResize"> <!-- ng-style="getTop()" -->
 		<div class="weekly-menu-menubar">
-			<span ng-repeat='menu in data.MENU' ng-click="menuBarClick(menu.DAY)">{{menu.DAY}}</span>
+			<span ng-repeat='menu in data.MENU' ng-click="menuBarClick(menu.DAY, $index)">{{menu.DAY}}</span>
 		</div>
 	</div>
 
