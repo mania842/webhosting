@@ -10,6 +10,7 @@
     	$scope.hs = webId.getWeb();
     	$scope.webId = webId;
     	
+    	console.log("hs", $scope.hs);
     	$scope.logo = $scope.hs.DOMAIN ? "json/" + $scope.hs.DOMAIN + "/title.png" : undefined;
     	$scope.$on('service.webId:updated', function(event, data, domain) {
     		$scope.hs = data;
@@ -21,6 +22,24 @@
     		$location.path($scope.hs.HOME + $scope.hs.DOMAIN);
     	};
     	
+    	$scope.getHeaderBgStyle = function() {
+    		return {
+    			"background": "-moz-linear-gradient(right, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%), url('json/fondo-home.jpg') no-repeat",
+    			"background": "-webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0)), color-stop(0%,rgba(255,255,255,0)), color-stop(100%,rgba(255,255,255,1))), url('json/fondo-home.jpg') no-repeat",
+    			"background": "-webkit-linear-gradient(right, rgba(255,255,255,0) 0%,rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%), url('json/fondo-home.jpg') no-repeat",
+    			"background": "-o-linear-gradient(right, rgba(255,255,255,0) 0%,rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%), url('json/fondo-home.jpg') no-repeat",
+    			"background": "-ms-linear-gradient(right, rgba(255,255,255,0) 0%,rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%), url('json/fondo-home.jpg') no-repeat",
+    			"background": "linear-gradient(to left, rgba(255,255,255,0) 0%,rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%), url('json/fondo-home.jpg') no-repeat",
+    			"background-repeat": "no-repeat",
+    			"background-size": "100%",
+    			"background-position": "center"
+    		};
+    		/*if ($scope.hs.isMobile && $scope.hs.message) {
+    			return {'display': 'block'};
+    		} else {
+    			return {'display': 'table-cell'};
+    		}*/
+    	};
     	// Load scope
 //    	$scope.vars = { newID: ""};
 //    	$scope.hs = csmdHeaderService;

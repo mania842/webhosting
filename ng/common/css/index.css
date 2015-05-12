@@ -60,6 +60,16 @@ fieldset legend
     right: 0; */
     overflow: auto;
 }
+.app-ngview-io {
+	display: block;
+	background-color: #F7F7F7;
+    position: absolute;
+    top: 5.5em;
+    bottom: 4em;
+    left: 0;
+    right: 0;
+    overflow: auto;
+}
 
 .header-title
 {

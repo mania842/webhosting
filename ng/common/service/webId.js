@@ -24,9 +24,10 @@
 //    			$http.$digest();
     			return service.web;
 			} else {
-    			service.getDataPromise = $http.get('json/' + homepage + "/homedata.json").success(function(data) {
+				var jsonData = 'json/' + homepage + "/homedata.json";
+//				jsonData = "https://dl.dropbox.com/s/hzy1jz9x3vol2rh/homedata.json?dl=0";
+    			service.getDataPromise = $http.get(jsonData).success(function(data) {
 //    				service.web = data;
-    				
    	    		   	page.setTitle(data.TITLE);
    	    		   	
    	    		   	// Copy properties from web service
