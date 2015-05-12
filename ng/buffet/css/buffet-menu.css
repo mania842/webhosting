@@ -23,6 +23,8 @@
 	box-shadow: 0px 0px 2px #999;
 	border-radius: .5em;
 	position: relative;
+	right: 0;
+  	left: 0;
 }
 .daily-menu.fix {
 	position: fixed;
@@ -116,15 +118,7 @@
 	float: left;
 	margin: .5em .5em .5em 0;
 }
-.weekly-menu-card-style.table-style .csmd-table
-{
-	width: 100%;
-}
-.weekly-menu-card-style table td
-{
-	padding: 0;
-}
-.weekly-menu-card-style label
+/* .weekly-menu-card-style label
 {
 	color: #54b407;
 	width: auto;
@@ -136,7 +130,7 @@
 	width:100%;
 	height:5em;
 	margin-bottom: .5em;
-}
+} */
 .weekly-menu-card-style h3, .weekly-status-report-fix h3
 {
 	font-size: 1.3em;
@@ -147,7 +141,7 @@
 	white-space: nowrap;
 	overflow: hidden;
 }
-.weekly-menu-card-style h4
+/* .weekly-menu-card-style h4
 {
 	font-size: 1.2em;
 	margin: 0 0 .25em 0;
@@ -161,4 +155,4 @@
 {
 	margin: .5em;
 	font-size: 1.1em;
-}
+} */
