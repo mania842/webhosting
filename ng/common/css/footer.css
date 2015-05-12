@@ -35,8 +35,7 @@
 	border-right: 1px solid #ffffff;
 	cursor: pointer;
 }
-.web-landing-footer-menubar > span:last-child
-{
+.web-landing-footer-menubar > span:last-child {
     border-right: none;
 }
 /*	Hovering only on Desktops and laptops */

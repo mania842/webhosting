@@ -1,6 +1,8 @@
 <div>
-	<div class="weekly-menu-menubar">
-		<span ng-repeat='menu in data.MENU'>{{menu.DAY}}</span>
+	<div class="weekly-menu">
+		<div class="weekly-menu-menubar">
+			<span ng-repeat='menu in data.MENU'>{{menu.DAY}}</span>
+		</div>
 	</div>
 	<div class="weekly-menu-card-style" ng-repeat='menu in data.MENU'>
 		<h3>{{menu.DAY}}</h3>
