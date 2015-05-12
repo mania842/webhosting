@@ -42,6 +42,7 @@
 }
 .daily-menu > div {
 	margin: .5em 1em;
+	font-size: .9em;
 }
 .daily-menu > article {
 	text-align: right;

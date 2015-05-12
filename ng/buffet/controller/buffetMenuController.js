@@ -27,9 +27,12 @@
     	$scope.getTop = function() {
     		return {'top': elementResult.offsetHeight};
     	};
-    	$scope.getPadding = function() {
+    	$scope.getPadding = function(isIOS) {
     		var dailyMenu = document.getElementsByClassName('daily-menu')[0];
+    		
     		var top = dailyMenu.offsetHeight;
+    		if (isIOS)
+    			top += em(2);
     		return {'padding-top': top};
     	};
     	
