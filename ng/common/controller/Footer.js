@@ -7,9 +7,8 @@
 
     angular.module('myApp').controller('webFooterController',
     function ($location, $scope, webId) {
-    	$scope.items = {};
-    	$scope.domain = webId.getWebDomain();
     	$scope.items = webId.getWebFooter();
+    	$scope.domain = webId.getWebDomain();
     	$scope.mode = [];
     	
        	$scope.$on('service.footer:updated', function(event, data, mode) {

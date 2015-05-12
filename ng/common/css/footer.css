@@ -11,8 +11,7 @@
 .web-landing-footer.ios {
 	position: fixed;
 }
-.web-landing-footer-menubar
-{
+.web-landing-footer-menubar {
 	text-align: right;
 	position: absolute;
 	bottom: 1em;
@@ -25,8 +24,7 @@
 	display: table;
 	width: 100%;
 }
-.web-landing-footer-menubar > span
-{
+.web-landing-footer-menubar > span {
 	display: table-cell;
 	color: #ffffff;
 	vertical-align: middle;
