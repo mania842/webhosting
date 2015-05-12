@@ -2,6 +2,10 @@
 	"DOMAIN" : "gainesvillehomecooking",
 	"TITLE" : "Gainesville Home Cooking",
 	"HOME" : "/buffet/",
+	"MAIN_BG_STYLE" : {
+		"background": "url('json/gainesvillehomecooking/main-bg.png') no-repeat",
+		"background-size": "100%"
+	},
 	"HEADER_BG_STYLE" : {
 		"background": "-moz-linear-gradient(right, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%), url('json/gainesvillehomecooking/title-bg.jpg') no-repeat",
     	"background": "-webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0)), color-stop(0%,rgba(255,255,255,0)), color-stop(100%,rgba(255,255,255,1))), url('json/gainesvillehomecooking/title-bg.jpg') no-repeat",
@@ -56,6 +60,11 @@
 		"DAY" : "SAT",
 		"FOOD" : "Fried Chicken, Pork Ribs, Macaroni & Cheese, Chicken liver, French Fries, Gravy Steak, Fried Okra, Broccoli Casserole, Mashed Potato, Rice, Corn Bread, Baked Potato, Beef Broccoli, Beef Stew, Chicken Tender"
 	}],
+	"DAILY_MENU" : {
+		"TITLE" : "Every Day on the Buffet....",
+		"FOOD" : "Dinner Roll, Cobbler, Green Bean, Cream Corns, Yellow Squash, Collard Green, Okra & Tomato, Steamed Cabbage, Rutabagas, Lima bean, Sweet Potato, Black Eye Pea, Baked Chicken, Fried Chicken, Fried Green Tomatoes",
+		"COMMENT" : "<font color='blue'>***** Fresh Vegetables & Fruits *****</font>"
+	},
 	"PRICES" : [ {
 		"NAME" : "2 years under",
 		"PRICE" : "<font color='blue'>Free</font>"

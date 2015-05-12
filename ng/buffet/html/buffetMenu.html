@@ -1,13 +1,30 @@
-<div>
-	<div class="weekly-menu">
+<div class="weekly-menu-main-side">
+	<div class="weekly-menu-fix" on-size-changed="logResize"> <!-- ng-style="getTop()" -->
 		<div class="weekly-menu-menubar">
-			<span ng-repeat='menu in data.MENU'>{{menu.DAY}}</span>
+			<span ng-repeat='menu in data.MENU' ng-click="menuBarClick(menu.DAY)">{{menu.DAY}}</span>
 		</div>
 	</div>
-	<div class="weekly-menu-card-style" ng-repeat='menu in data.MENU'>
-		<h3>{{menu.DAY}}</h3>
-		<article>
-			<span>{{menu.FOOD}}</span>
-		</article>
+
+	<div class="main-menu" scrollbind ng-style="getTop()">
+		<!-- <div class="daily-menu">
+			<label>{{data.DAILY_MENU.TITLE}}</label>
+			<div>{{data.DAILY_MENU.FOOD}}</div>
+			<article ng-bind-html="data.DAILY_MENU.COMMENT"></article>
+		</div> -->
+		
+		<div class="daily-menu" ng-class="{fix : 'true'}">
+			<label>{{data.DAILY_MENU.TITLE}}</label>
+			<div>{{data.DAILY_MENU.FOOD}}</div>
+			<article ng-bind-html="data.DAILY_MENU.COMMENT"></article>
+		</div>
+		
+		<div id="{{menu.DAY}}" class="weekly-menu-card-style" ng-repeat='menu in data.MENU'>
+			<h3>{{menu.DAY}}</h3>
+			<article>
+				<span>{{menu.FOOD}}</span>
+			</article>
+		</div>
+		
+		<div ng-style="getPadding()"></div>
 	</div>
 </div>

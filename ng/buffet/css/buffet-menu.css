@@ -1,9 +1,67 @@
-.weekly-menu {
+.weekly-menu-main-side {
+	position: relative;
+	height: 100%;
+    overflow: auto;
+}
+
+.weekly-menu-main-side .main-menu {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	overflow-y: auto;
+}
+
+.daily-menu {
+	margin: 1em;
+	padding: .5em 1em;
+	background: none repeat scroll 0% 0% rgba(245, 245, 245, 0.90);
+	box-shadow: 0px 0px 2px #999;
+	border-radius: .5em;
+	position: relative;
+}
+.daily-menu.fix {
+	position: fixed;
+	margin: 0em;
+	border-radius: 0em;
+	box-shadow: none;
+	bottom: 4em;
+	border-top: 1px solid #008537;
+	background: rgba(229, 243, 235, 0.9);
+}
+.daily-menu > label {
+	font-weight: bold;
+	font-style: italic;
+	font-size: 1.2em;
+	font-family: serif;
+	color: black;
+}
+.daily-menu > div {
+	margin: .5em 1em;
+}
+.daily-menu > article {
+	text-align: right;
+}
+
+.weekly-menu-fix {
 	background-color: #008537;
 	color: #000000;
 	overflow: hidden;
-	display: table;
+	/* display: table; */
+	display: block;
 	width: 100%;
+	position: relative;
+	z-index: 1000;
+	
+/* 	background: rgba(0, 133, 55, 0.88); */
+	box-shadow: 0px 0px 2px #999;
+}
+/* .weekly-menu.menubar-fix {
+	position: fixed;
+	z-index: 1000;
+} */
+.scrollbind {
+	overflow: auto;
 }
 .weekly-menu-menubar {
 	display: table-cell;
@@ -18,11 +76,16 @@
 	cursor: pointer;
 	padding: 0 .5em;
 	margin: .5em 0;
+	text-transform: lowercase;
+}
+.weekly-menu-menubar > span:FIRST-LETTER {
+	text-transform: uppercase;
 }
 
 .weekly-menu-menubar > span:last-child {
     border-right: none;
 }
+
 
 /******************************
  * Detail card with border and shadow 
@@ -31,10 +94,11 @@
 {
 	border: 1px solid #000;
 	padding: .5em 1em;
-	background-color: #F7F7F7;
+	/* background-color: #F7F7F7; */
 	box-shadow:.3em .3em .3em gray;
 	font-size: .9em;
 	/* overflow: auto; */
+	border-radius: 0.5em;
 	margin: 1em;
 }
 .weekly-menu-card-style.table-style

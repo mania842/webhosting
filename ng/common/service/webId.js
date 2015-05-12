@@ -35,7 +35,7 @@
    	    		   	return service.web;
     	    	}).then(function() {
     	    		$rootScope.title = service.web.TITLE;
-//    	    		$rootScope.$broadcast('service.webId:updated', service.getWeb());
+    	    		$rootScope.$broadcast('service.webId:updated', service.getWeb());
     	    	});
 			}
     		
