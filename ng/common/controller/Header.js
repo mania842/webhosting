@@ -9,7 +9,7 @@
     function ($scope, $window, webId, $location) {
     	$scope.hs = webId.getWeb();
     	$scope.webId = webId;
-    	
+    	alert("hs" + $scope.hs);
     	console.log("hs", $scope.hs);
     	$scope.logo = $scope.hs.DOMAIN ? "json/" + $scope.hs.DOMAIN + "/title.png" : undefined;
     	$scope.$on('service.webId:updated', function(event, data, domain) {
