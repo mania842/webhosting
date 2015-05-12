@@ -5,14 +5,14 @@
 		</div>
 	</div>
 
-	<div class="main-menu" scrollbind ng-style="getTop()">
+	<div class="main-menu" scrollbind ng-style="getTop()" ng-class="{ios : appService.whichDevice == 'iOS'}">
 		<!-- <div class="daily-menu">
 			<label>{{data.DAILY_MENU.TITLE}}</label>
 			<div>{{data.DAILY_MENU.FOOD}}</div>
 			<article ng-bind-html="data.DAILY_MENU.COMMENT"></article>
 		</div> -->
 		
-		<div class="daily-menu" ng-class="{fix : 'true'}">
+		<div class="daily-menu fix">
 			<label>{{data.DAILY_MENU.TITLE}}</label>
 			<div>{{data.DAILY_MENU.FOOD}}</div>
 			<article ng-bind-html="data.DAILY_MENU.COMMENT"></article>

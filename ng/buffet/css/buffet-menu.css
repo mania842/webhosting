@@ -12,6 +12,10 @@
 	overflow-y: auto;
 }
 
+.weekly-menu-main-side .main-menu.ios {
+	position: inherit;
+}
+
 .daily-menu {
 	margin: 1em;
 	padding: .5em 1em;
