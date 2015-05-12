@@ -60,12 +60,13 @@ fieldset legend
 }
 .app-ngview.ios {
 	/* background-color: #F7F7F7; */
-    /* position: relative; */
+    position: relative;
     margin-top:5.5em;
     padding-bottom: 4em;
     top: 0;
     bottom: 0;
     overflow: auto;
+    height: 100%;
 }
 
 .header-title

@@ -26,7 +26,7 @@
 		var elementResult = document.getElementsByClassName('weekly-menu-fix')[0];
 		
     	$scope.getTop = function() {
-    		return {'top': elementResult.offsetTop + elementResult.offsetHeight};
+    		return {'top': elementResult.offsetHeight};
     	};
     	$scope.getPadding = function() {
     		var dailyMenu = document.getElementsByClassName('daily-menu')[0];
