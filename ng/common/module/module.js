@@ -44,8 +44,6 @@
 	});
 	
 	module.run(function($rootScope, $location, webId) {
-		console.log("$location.absUrl()", $location.absUrl());
-		
 		if ($location.absUrl().indexOf("gainesvillehomecooking.com") > -1) {
 			$location.path('/buffet/menu/gainesvillehomecooking');
 			webId.loadWebData("gainesvillehomecooking");
@@ -57,11 +55,16 @@
 		$rootScope.admin = {
     		web : webId.web,
         };
+		/*$rootScope.title = $rootScope.admin.web.TITLE;
+		console.log("$rootScope.title", $rootScope.title);*/
+		
 	});
 	
 	angular.module('myApp').controller('HomeController', 
-    		function ($scope, $location, page) {
-		$scope.page = page;
+    		function ($scope, $location, appService) {
+		$scope.appService = {
+			whichDevice : appService.whichDevice
+		};
 	});
 
 })();

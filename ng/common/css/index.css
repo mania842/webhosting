@@ -47,27 +47,23 @@ fieldset legend
     padding: 0 0.4em;
 }
 
-.app-ngview
-{
-    /* display: block; */
-	background-color: #F7F7F7;
-    position: relative;
-    margin-top:5.5em;
-    padding-bottom: 4em;
-    /* top: 5.5em;
-    bottom: 4em;
-    left: 0;
-    right: 0; */
-    overflow: auto;
-}
-.app-ngview-io {
-	display: block;
+.app-ngview {
+    display: block;
 	background-color: #F7F7F7;
     position: absolute;
     top: 5.5em;
     bottom: 4em;
     left: 0;
     right: 0;
+    overflow: auto;
+}
+.app-ngview.ios {
+	background-color: #F7F7F7;
+    position: relative;
+    margin-top:5.5em;
+    padding-bottom: 4em;
+    top: 0;
+    bottom: 0;
     overflow: auto;
 }
 

@@ -1,11 +1,13 @@
-.web-landing-header
-{
-    position: fixed;
+.web-landing-header {
+    position: absolute;
     top: 0;
 	height: 5em;
     left: 0;
     right: 0;
     background-color: #ffffff;
+}
+.web-landing-header.ios {
+	position: fixed;
 }
 .web-landing-header-header {
 	position: relative;

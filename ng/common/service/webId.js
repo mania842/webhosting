@@ -6,7 +6,7 @@
     'use strict';
     
     angular.module('myApp').service('webId', 
-	function ($http, $rootScope, page) {
+	function ($http, $rootScope) {
     	var service = this;
     	
     	// The cached data model object
@@ -18,27 +18,24 @@
     	 * Get and cache current web
     	 */
     	service.loadWebData = function(homepage) {
-    		console.log("loadwebdata", homepage);
     		if (service.getDataPromise && service.homepage === homepage) {
     			// Kick off a digest since we're bypassing the $http call
-//    			$http.$digest();
+//    			$digest();
     			return service.web;
 			} else {
 				var jsonData = 'json/' + homepage + "/homedata.json";
 //				jsonData = "https://dl.dropbox.com/s/hzy1jz9x3vol2rh/homedata.json?dl=0";
-    			service.getDataPromise = $http.get('json/' + homepage + "/homedata.json").success(function(data) {
-//    				service.web = data;
-   	    		   	page.setTitle(data.TITLE);
-   	    		   	
+    			service.getDataPromise = $http.get(jsonData).success(function(data) {
    	    		   	// Copy properties from web service
     				angular.extend(service.web, data);
     				service.homepage = homepage;
     				var res = data.PHONE.split(" ");
     				service.web.PHONE = "(" + res[0] + ") " + res[1] + "-" + res[2];
-    				
     				service.web.CALL = "tel:" + res[0] + "-" + res[1] + "-" + res[2];
-   	    		   	$rootScope.$broadcast('service.webId:updated', service.getWeb());
    	    		   	return service.web;
+    	    	}).then(function() {
+    	    		$rootScope.title = service.web.TITLE;
+    	    		$rootScope.$broadcast('service.webId:updated', service.getWeb());
     	    	});
 			}
     		

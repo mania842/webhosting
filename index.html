@@ -7,7 +7,7 @@
 		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0"> -->
 		
 	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimal-ui" />
-	<title>{{ page.title() }}</title>
+	<title ng-bind="title"></title>
 	<!-- <link rel="stylesheet" href="stylesheets/styles.css"> -->
 	<link rel="stylesheet" href="stylesheets/pygment_trac.css">
 	
@@ -32,6 +32,7 @@
 	<!-- Directives -->
 	<script src="ng/common/directives/myMap.js"></script>
 	<!-- Services -->
+	<script src="ng/common/service/appService.js"></script>
 	<script src="ng/common/service/webId.js"></script>
 	
 	<!-- buffet module -->
@@ -48,7 +49,7 @@
 </head>
 <body>
 	<!-- App area -->
-	<div class="app-ngview" ng:view></div>
+	<div class="app-ngview" ng-class="{ios : appService.whichDevice == 'iOS'}" ng:view></div>
 	
 	<!-- Header -->
     <ng:include src="'ng/common/html/header.html'"></ng:include>

@@ -1,9 +1,15 @@
 .web-landing-footer {
-	position: fixed;
+	position: absolute;
 	height: 4em;
 	bottom: 0;
 	left: 0;
 	right: 0;
+}
+/*
+	ios mode - scroll issue;
+*/
+.web-landing-footer.ios {
+	position: fixed;
 }
 .web-landing-footer-menubar
 {

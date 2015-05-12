@@ -1,4 +1,4 @@
-<div class="web-landing-header" ng:controller="webHeaderController">
+<div class="web-landing-header" ng:controller="webHeaderController" ng-class="{ios : appService.whichDevice == 'iOS'}">
 	<!-- Header -->
 	<div class="web-landing-header-header" ng-style="{{hs.HEADER_BG_STYLE}}">
 		<div class="web-landing-header-header-title">
