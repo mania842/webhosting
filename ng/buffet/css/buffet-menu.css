@@ -42,7 +42,7 @@
 	font-family: serif;
 	color: black;
 }
-.daily-menu > div > span {
+.daily-menu > div {
 	margin: .5em 1em;
 	font-size: .9em;
 }
