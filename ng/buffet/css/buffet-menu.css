@@ -16,37 +16,52 @@
 	position: inherit;
 }
 
-.daily-menu {
-	margin: 1em;
-	padding: .5em 1em;
-	background: none repeat scroll 0% 0% rgba(245, 245, 245, 0.90);
-	box-shadow: 0px 0px 2px #999;
-	border-radius: .5em;
-	position: relative;
-	right: 0;
-  	left: 0;
-}
-.daily-menu.fix {
+.daily-menu-fix {
 	position: fixed;
 	margin: 0em;
+	padding: .5em;
 	border-radius: 0em;
 	box-shadow: none;
 	bottom: 4em;
 	border-top: 1px solid #008537;
 	background: rgba(229, 243, 235, 0.9);
+	right: 0;
+  	left: 0;
+  	padding: 0.5em 1.5em;
 }
-.daily-menu > label {
+.daily-menu-fix.relative {
+/* 	margin: 1em;
+	padding: .5em 1em;
+	background: none repeat scroll 0% 0% rgba(245, 245, 245, 0.90);
+	box-shadow: 0px 0px 2px #999; */
+	border-radius: 0.5em;
+	position: relative;
+	bottom: 0px;
+	border: 1px solid #008537;
+	padding: 0.5em;
+	margin: 0.5em 1em;
+}
+.daily-menu-fix .title {
+	position: relative;
+}
+.daily-menu-fix .title .right-align {
+	position: absolute;
+	right: 0;
+	color: rgba(0, 133, 55, 0.7);
+}
+.daily-menu-fix label {
 	font-weight: bold;
 	font-style: italic;
 	font-size: 1.2em;
 	font-family: serif;
 	color: black;
 }
-.daily-menu > div {
+.daily-menu-fix .body {
 	margin: .5em 1em;
 	font-size: .9em;
 }
-.daily-menu > article {
+.daily-menu-fix .comment {
+	font-family: serif;
 	text-align: right;
 }
 
@@ -74,7 +89,12 @@
 	display: table-cell;
 	vertical-align: middle;
 }
-.weekly-menu-menubar > span {
+a.active {
+	background: #00AC7F;
+	color: #fff;
+}
+.weekly-menu-menubar > a {
+	text-decoration: none;
 	display:inline-block;
 	color: #ffffff;
 	vertical-align: middle;
@@ -85,11 +105,11 @@
 	margin: .5em 0;
 	text-transform: lowercase;
 }
-.weekly-menu-menubar > span:FIRST-LETTER {
+.weekly-menu-menubar > a:FIRST-LETTER {
 	text-transform: uppercase;
 }
 
-.weekly-menu-menubar > span:last-child {
+.weekly-menu-menubar > a:last-child {
     border-right: none;
 }
 
@@ -154,4 +174,13 @@
 {
 	margin: .5em;
 	font-size: 1.1em;
+} */
+
+
+
+
+
+
+/* #container {
+	overflow: auto;
 } */

@@ -1,22 +1,50 @@
 <div class="weekly-menu-main-side">
 	<div class="weekly-menu-fix" on-size-changed="logResize"> <!-- ng-style="getTop()" -->
-		<div class="weekly-menu-menubar">
-			<span ng-repeat='menu in data.MENU' ng-click="menuBarClick(menu.DAY, $index)">{{menu.DAY}}</span>
+		<!-- <nav du-scroll-container="container">
+    <ul>
+      <li><a href="#section-1" du-smooth-scroll du-scrollspy>Section 1</a></li>
+      <li><a href="#section-2" du-smooth-scroll du-scrollspy>Section 2</a></li>
+      <li><a href="#section-3" du-smooth-scroll du-scrollspy>Section 3</a></li>
+      <li><a href="http://github.com/oblador/angular-scroll/">Project on Github</a></li>
+    </ul>
+  </nav> -->
+  		<!-- <div class="weekly-menu-menubar" du-scroll-container="container" ng-show="$root.admin.appService.deviceOS != 'iOS'">
+  			<a href="#{{menu.DAY}}" ng-repeat='menu in data.MENU' ng-click="menuBarClick(menu.DAY, $index)" du-smooth-scroll du-scrollspy>{{menu.DAY}}</a>
+  		</div>
+  		
+		<div class="weekly-menu-menubar" ng-show="$root.admin.appService.deviceOS == 'iOS'">
+			<a href="#{{menu.DAY}}" ng-repeat='menu in data.MENU' ng-click="menuBarClick(menu.DAY, $index)" du-smooth-scroll du-scrollspy>{{menu.DAY}}</a>
+		</div> -->
+		
+		
+		<!-- <div class="weekly-menu-menubar" du-scroll-container="container" ng-show="$root.admin.appService.deviceOS != 'iOS'">
+			<a href="{{getHrefId(menu.DAY, $root.admin.appService.deviceOS != 'iOS')}}" ng-repeat='menu in data.MENU' du-smooth-scroll du-scrollspy>{{menu.DAY}}</a>
 		</div>
+		<div class="weekly-menu-menubar" ng-show="$root.admin.appService.deviceOS == 'iOS'">
+			<a href="{{getHrefId(menu.DAY, $root.admin.appService.deviceOS == 'iOS')}}" ng-repeat='menu in data.MENU' du-smooth-scroll du-scrollspy>{{menu.DAY}}</a>
+		</div> -->
+		
+		<ng:switch on="$root.admin.appService.deviceOS != 'iOS'">
+			<div class="weekly-menu-menubar" du-scroll-container="container" ng:switch-when="true">
+				<a id="nav{{menu.DAY}}" href="#{{menu.DAY}}" ng-repeat='menu in data.MENU' du-smooth-scroll du-scrollspy offset="0" >{{menu.DAY}}</a>
+			</div>
+	 		
+			<div class="weekly-menu-menubar" ng:switch-default>
+				<a id="nav{{menu.DAY}}" href="#{{menu.DAY}}" ng-repeat='menu in data.MENU' du-smooth-scroll du-scrollspy offset="{{cachedOffSet}}" >{{menu.DAY}}</a>
+			</div>
+		</ng:switch>
+		
+		<!-- <div class="weekly-menu-menubar">
+			<a href="#{{menu.DAY}}" ng-repeat='menu in data.MENU' ng-click="menuBarClick(menu.DAY, $index)" du-smooth-scroll du-scrollspy>{{menu.DAY}}</a>
+		</div> -->
 	</div>
 
-	<div class="main-menu" scrollbind ng-style="getTop()" ng-class="{ios : appService.deviceOS == 'iOS'}">
+	<div class="main-menu" ng-style="getTop()" ng-class="{ios : appService.deviceOS == 'iOS'}" id="container" du-scroll-container>
 		<!-- <div class="daily-menu">
 			<label>{{data.DAILY_MENU.TITLE}}</label>
 			<div>{{data.DAILY_MENU.FOOD}}</div>
 			<article ng-bind-html="data.DAILY_MENU.COMMENT"></article>
 		</div> -->
-		
-		<div class="daily-menu fix">
-			<label>{{data.DAILY_MENU.TITLE}}</label>
-			<div>{{data.DAILY_MENU.FOOD}}</div>
-			<article ng-bind-html="data.DAILY_MENU.COMMENT"></article>
-		</div>
 		
 		<div id="{{menu.DAY}}" class="weekly-menu-card-style" ng-repeat='menu in data.MENU'>
 			<h3>{{menu.DAY}}</h3>
@@ -25,6 +53,20 @@
 			</article>
 		</div>
 		
-		<div ng-style="getPadding(appService.deviceOS == 'iOS')"></div>
+		<div ng-style="getPadding(appService.deviceOS == 'iOS')">
+			<div class="daily-menu-fix" ng-class="{relative: vars.isAtBottom}">
+			<div class="title" ng-click="clickOnCommentTitle(data)">
+				<label>{{data.DAILY_MENU.TITLE}}</label>
+				<label class="right-align" ng-show="!vars.isAtBottom">
+					<span ng-show="!data.DAILY_MENU.collapsed">&#9660;</span>
+					<span ng-show="data.DAILY_MENU.collapsed">&#9650;</span>
+				</label>
+			</div>
+			<div ng-show="!data.DAILY_MENU.collapsed">
+				<div class="body">{{data.DAILY_MENU.FOOD}}</div>
+				<div class="comment" ng-bind-html="data.DAILY_MENU.COMMENT"></div>
+			</div>
+		</div>
+		</div>
 	</div>
 </div>

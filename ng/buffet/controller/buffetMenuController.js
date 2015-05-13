@@ -3,17 +3,24 @@
     'use strict';
     
     angular.module('buffetModule').controller('BuffetMenuController', 
-    		function ($http, $scope, $location, $routeParams, webId, $anchorScroll, appService) {
+    		function ($document, $http, $rootScope, $scope, $location, $routeParams, webId, $anchorScroll, appService) {
     	$scope.isScrollTop = true;
     	$scope.data = webId.loadWebData($routeParams.homepage);
+    	$scope.vars = {
+    		cachedCollapse: false,
+    	};
 //    	$scope.data = webId.getWeb();
     	
-    	
+    	$scope.cachedPadding = 0;
     	
     	$scope.menuBarClick = function(day, index) {
-    		$location.hash(day);
-    	    // call $anchorScroll()
-    	    $anchorScroll();
+//    		$location.hash(day);
+//    	    // call $anchorScroll()
+//    	    $anchorScroll();
+    	    
+    	    var someElement = angular.element(document.getElementById(day));
+    	    console.log("someElement", someElement);
+            $document.scrollToElementAnimated(someElement);
     	};
     	
     	var em = function (input) {
@@ -22,26 +29,54 @@
 		};
 		
 		$anchorScroll.yOffset = em(8);
-		var elementResult = document.getElementsByClassName('weekly-menu-fix')[0];
 		
     	$scope.getTop = function() {
+    		var elementResult = document.getElementsByClassName('weekly-menu-fix')[0];
+    		console.log("elementResult", elementResult);
+    		$scope.cachedOffSet = elementResult.offsetTop + elementResult.offsetHeight;
     		return {'top': elementResult.offsetHeight};
     	};
     	$scope.getPadding = function(isIOS) {
-    		var dailyMenu = document.getElementsByClassName('daily-menu')[0];
+    		var dailyMenu = document.getElementsByClassName('daily-menu-fix')[0];
+    		var top = dailyMenu.offsetHeight + em(.5);
     		
-    		var top = dailyMenu.offsetHeight;
     		if (isIOS)
     			top += em(2);
     		
-    		console.log("appService.isLandscape()", appService.isLandscape());
-    		return {'padding-top': top};
+    		top = top > $scope.cachedPadding ? top : $scope.cachedPadding;
+    		$scope.cachedPadding = top;
+    		return {'height': top};
     	};
     	
     	$scope.logResize = function () {
     		$scope.$apply();
-//            console.log('element resized');
         };
+        
+        $rootScope.$on('duScrollspy:becameActive', function($event, $element){
+        	var navId = "nav" + $scope.data.MENU[$scope.data.MENU.length - 1].DAY;
+        	var navId1 = "nav" + $scope.data.MENU[$scope.data.MENU.length - 2].DAY;
+        	if (navId === $element.context.id || navId1 === $element.context.id) {
+        		$scope.data.DAILY_MENU.collapsed = false;
+        		$scope.vars.isAtBottom = true;
+        	} else {
+        		$scope.data.DAILY_MENU.collapsed = $scope.vars.cachedCollapse;
+        		$scope.vars.isAtBottom = false;
+        	}
+        	$scope.$apply();
+        });
+        
+        $scope.clickOnCommentTitle = function(data) {
+        	if (!$scope.vars.isAtBottom) {
+        		data.DAILY_MENU.collapsed = !data.DAILY_MENU.collapsed;
+        		$scope.vars.cachedCollapse = $scope.data.DAILY_MENU.collapsed;
+        		
+        	} else {
+        		data.DAILY_MENU.collapsed = false;
+        	}
+        	
+        	
+        };
+        
 	});
     
 

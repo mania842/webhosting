@@ -6,8 +6,11 @@
 	'use strict';
 
 	// Define our module.
-	var module = angular.module('myApp', [ 'ngRoute', 'ngSanitize', 'buffetModule' ]);
+	var module = angular.module('myApp', [ 'ngRoute', 'ngSanitize', 'buffetModule', 'duScroll' ]);
 
+	module.value('duScrollDuration', 500);
+	module.value('duScrollBottomSpy', true);
+	
 	// Configure app
 	module.config(function($routeProvider) {
 		$routeProvider.when('/', { /*templateUrl : 'ng/common/html/main.html'*/
