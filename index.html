@@ -46,9 +46,9 @@
     <![endif]-->
 	
 </head>
-<body ng-class="{ios:appService.whichDevice == 'iOS', landscape:$root.admin.appService.isLandscape()}">
+<body ng-class="{iPhone:appService.isIPhone, landscape:$root.admin.appService.isLandscape()}">
 	<!-- App area -->
-	<div class="app-ngview" ng-class="{ios : appService.whichDevice == 'iOS'}" ng-style="{{$root.admin.web.MAIN_BG_STYLE}}" ng:view></div>
+	<div class="app-ngview" ng-class="{ios : appService.deviceOS == 'iOS'}" ng-style="{{$root.admin.web.MAIN_BG_STYLE}}" ng:view></div>
 	
 	<!-- Header -->
     <ng:include src="'ng/common/html/header.html'"></ng:include>

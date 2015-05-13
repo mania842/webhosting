@@ -18,7 +18,7 @@ body {
   /* overflow: hidden; */
   /* background: url(images/body-background.png) #eae6d1; */
 }
-body.ios.landscape {
+body.iPhone.landscape {
 	font-size: .7em;
 }
 select:focus,

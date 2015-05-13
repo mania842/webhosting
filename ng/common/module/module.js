@@ -134,7 +134,7 @@
 	angular.module('myApp').controller('HomeController', 
     		function ($scope, $location, appService) {
 		$scope.appService = {
-			whichDevice : appService.whichDevice
+			deviceOS : appService.deviceOS
 		};
 	});
 

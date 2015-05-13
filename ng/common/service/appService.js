@@ -28,12 +28,13 @@
             any: function() {
                 return (isDevice.Android() || isDevice.BlackBerry() || isDevice.iOS() || isDevice.Opera() || isDevice.Windows());
             },
-            whichDevice: function() {
+            getOS: function() {
             	return isDevice.iOS() ? "iOS" : "any";
             }
         };
     	service.isDevice = isDevice.any();
-    	service.whichDevice = isDevice.whichDevice();
+    	service.deviceOS = isDevice.getOS();
+    	service.isIPhone = navigator.userAgent.match(/iPhone|iPod/i);
     	service.isLandscape = function() {
     		return window.innerWidth > window.innerHeight;
     	};
