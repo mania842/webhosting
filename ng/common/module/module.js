@@ -43,7 +43,7 @@
 		};
 	});
 	
-	module.run(function($rootScope, $location, webId) {
+	module.run(function($rootScope, $location, webId, appService) {
 		if ($location.absUrl().indexOf("gainesvillehomecooking.com") > -1) {
 			$location.path('/buffet/menu/gainesvillehomecooking');
 			webId.loadWebData("gainesvillehomecooking");
@@ -54,6 +54,7 @@
 		
 		$rootScope.admin = {
     		web : webId.web,
+    		appService : appService
         };
 	});
 	

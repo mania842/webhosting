@@ -32,9 +32,11 @@
             	return isDevice.iOS() ? "iOS" : "any";
             }
         };
-    	
     	service.isDevice = isDevice.any();
     	service.whichDevice = isDevice.whichDevice();
+    	service.isLandscape = function() {
+    		return window.innerWidth > window.innerHeight;
+    	};
     	
 //    	service.isLoading = false;
 //    	var opts1 = {

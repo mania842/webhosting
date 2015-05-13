@@ -18,7 +18,9 @@ body {
   /* overflow: hidden; */
   /* background: url(images/body-background.png) #eae6d1; */
 }
-
+body.ios.landscape {
+	font-size: .8em;
+}
 select:focus,
 input:focus,
 button:focus,
@@ -61,7 +63,7 @@ fieldset legend
 .app-ngview.ios {
 	/* background-color: #F7F7F7; */
     position: relative;
-    margin-top:5.5em;
+    padding-top:5.5em;
     padding-bottom: 4em;
     top: 0;
     bottom: 0;

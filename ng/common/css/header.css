@@ -68,26 +68,6 @@
 	padding-right: .5em;
 	color: #000000;
 }
-.web-landing-header-line2 {
-	position: absolute;
-    top: 2.5em;
-	height: 5px;
-    left: 0;
-    right: 0;
-	background: #dde5ff;
-	width:99%;
-	margin-left: 0.6%;
-}
-.web-landing-header-line1 {
-	position: absolute;
-    top: 2.5em;
-	height: 1px;
-    left: 0;
-    right: 0;
-	background: #0c2577;
-	width:99%;
-	margin-left: 0.5%;
-}
 .web-landing-header-rhs
 {
     position: absolute;

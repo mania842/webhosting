@@ -46,7 +46,7 @@
     <![endif]-->
 	
 </head>
-<body>
+<body ng-class="{ios:appService.whichDevice == 'iOS', landscape:$root.admin.appService.isLandscape()}">
 	<!-- App area -->
 	<div class="app-ngview" ng-class="{ios : appService.whichDevice == 'iOS'}" ng-style="{{$root.admin.web.MAIN_BG_STYLE}}" ng:view></div>
 	
@@ -55,6 +55,5 @@
     
 	<!-- Footer -->
 	<ng:include src="'ng/common/html/footer.html'"></ng:include>
-	
 </body>
 </html>

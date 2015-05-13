@@ -3,7 +3,7 @@
     'use strict';
     
     angular.module('buffetModule').controller('BuffetMenuController', 
-    		function ($http, $scope, $location, $routeParams, webId, $anchorScroll) {
+    		function ($http, $scope, $location, $routeParams, webId, $anchorScroll, appService) {
     	$scope.isScrollTop = true;
     	$scope.data = webId.loadWebData($routeParams.homepage);
 //    	$scope.data = webId.getWeb();
@@ -33,6 +33,8 @@
     		var top = dailyMenu.offsetHeight;
     		if (isIOS)
     			top += em(2);
+    		
+    		console.log("appService.isLandscape()", appService.isLandscape());
     		return {'padding-top': top};
     	};
     	
