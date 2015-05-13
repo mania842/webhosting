@@ -19,7 +19,7 @@ body {
   /* background: url(images/body-background.png) #eae6d1; */
 }
 body.iPhone.landscape {
-	font-size: .7em;
+	font-size: .6em;
 }
 select:focus,
 input:focus,
