@@ -132,8 +132,8 @@
 	        scope:
 			{
 				setCurrent: '=',
-				long: '=',
-				lang: '='
+				long: '@',
+				lang: '@'
 			}
 	    };
 	});

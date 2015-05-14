@@ -23,25 +23,19 @@
             $document.scrollToElementAnimated(someElement);
     	};
     	
-    	var em = function (input) {
-		    var emSize = parseFloat($("body").css("font-size"));
-		    return (emSize * input);
-		};
-		
-		$anchorScroll.yOffset = em(8);
+		$anchorScroll.yOffset = appService.em(8);
 		
     	$scope.getTop = function() {
     		var elementResult = document.getElementsByClassName('weekly-menu-fix')[0];
-    		console.log("elementResult", elementResult);
     		$scope.cachedOffSet = elementResult.offsetTop + elementResult.offsetHeight;
     		return {'top': elementResult.offsetHeight};
     	};
     	$scope.getPadding = function(isIOS) {
     		var dailyMenu = document.getElementsByClassName('daily-menu-fix')[0];
-    		var top = dailyMenu.offsetHeight + em(.5);
+    		var top = dailyMenu.offsetHeight + appService.em(1);
     		
     		if (isIOS)
-    			top += em(2);
+    			top += appService.em(2);
     		
     		top = top > $scope.cachedPadding ? top : $scope.cachedPadding;
     		$scope.cachedPadding = top;

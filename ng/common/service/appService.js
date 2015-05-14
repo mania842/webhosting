@@ -39,6 +39,11 @@
     		return window.innerWidth > window.innerHeight;
     	};
     	
+    	service.em = function (input) {
+		    var emSize = parseFloat($("body").css("font-size"));
+		    return (emSize * input);
+		};
+    	
 //    	service.isLoading = false;
 //    	var opts1 = {
 //    		lines: 10, // The number of lines to draw

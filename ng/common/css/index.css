@@ -1,10 +1,17 @@
-html,body
-{
+html,body {
     margin: 0;
     padding: 0;
     height: 100%;
     width: 100%;
     font-family: sans-serif;
+}
+h1 {
+	color: black;
+	margin: .3em;
+	font-size: 1.5em;
+}
+pre {
+	font-family: sans-serif;
 }
 
 body {
@@ -24,21 +31,18 @@ body.iPhone.landscape {
 select:focus,
 input:focus,
 button:focus,
-textarea:focus
-{
+textarea:focus {
     outline: none;
 }
  
-fieldset
-{
+fieldset {
     border-radius: 5px;
     font-size: 1em;
     display: inline-block;
     border: 1px solid #0c2577;
 }
  
-fieldset legend
-{
+fieldset legend {
     border-radius: 5px;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.5),
                 5px 5px 10px rgba(0,0,0,0.5),
@@ -108,9 +112,9 @@ fieldset legend
 }
 .price-table td {
 	font-family: serif;
-	font-size: 1.3em;
+	font-size: 1.2em;
 	font-weight: bold;
-	padding: .5em;
+	padding: .2em;
 }
 .left-align {
 	text-align: left;
@@ -119,5 +123,7 @@ fieldset legend
 	text-align: right;
 }
 .phone {
+	cursor: pointer;
+	color: blue;
 	text-decoration: none;
 }

@@ -1,12 +1,13 @@
-<div class="center-screen">
+<div class="center-screen location">
   <h1>Location</h1>
-  <div class="location-map">
-  	<my-map set-current="false" long="34.296189" lang="-83.83918"/><br>
+  <div class="location-map" ng-style="setMapHeight()">
+  	<my-map set-current="false" long="{{data.LOCATION.LONG}}" lang="{{data.LOCATION.LANG}}"/><br>
   </div>
-  <a href="https://www.google.com/maps/place/Gainesville+Home+Cooking/@34.296189,-83.83918,15z/data=!4m2!3m1!1s0x0:0xd7d439217d2283fb">View Larger Map</a>
+  <a href="{{data.LOCATION.MAP}}">View Larger Map</a>
   
   <h1>{{data.TITLE}}</h1>
-  {{data.getAddress()}}<br>
-  <a class="phone" href='{{data.CALL}}'>{{data.PHONE}}</a><br>
+  <pre>{{data.getAddress2()}}</pre>
+  <span class="phone" ng-click="clickOnPhone()">{{data.PHONE}}</span>
+  <!-- <a class="phone" href='{{data.CALL}}'>{{data.PHONE}}</a><br> -->
   
 </div>

@@ -77,6 +77,19 @@
     		return str;
     	};
     	
+    	service.web.getAddress2 = function() {
+    		var str = "";
+    		if (service.web.ADDRESS) {
+    			str += service.web.ADDRESS.STREET_1.trim();
+    			if (service.web.ADDRESS.STREET_2 && service.web.ADDRESS.STREET_2.length > 0)
+    				str += " " + service.web.ADDRESS.STREET_2.trim();
+    			str += "\n" + service.web.ADDRESS.CITY.trim();
+    			str += ", " + service.web.ADDRESS.STATE.trim();
+    			str += " " + service.web.ADDRESS.ZIPCODE.trim();
+    		}
+    		return str;
+    	};
+    	
 	    //-----------------------------------------------------------------------
 	});
 })();

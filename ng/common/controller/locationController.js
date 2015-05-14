@@ -3,18 +3,18 @@
     'use strict';
     
     angular.module('myApp').controller('LocationController', 
-    		function ($scope, $location, $routeParams, webId) {
+    		function ($scope, $location, $routeParams, webId, appService) {
     		
     	$scope.data = webId.getWeb();
-//    	$scope.data = {
-//    		phone: "917-504-9043",
-//    	};
     	
-//    	$scope.data.call = "tel:" + $scope.data.phone;
-    	console.log("click", $scope.data);
+    	$scope.clickOnPhone = function() {
+    		if (appService.isDevice)
+    			window.open($scope.data.CALL);
+    	};
     	
-    	$scope.call = function() {
-    		window.open('tel:917-504-9043');
+    	$scope.setMapHeight = function() {
+    		var ele = document.getElementsByClassName('app-ngview')[0];
+    		return { "max-height" : ele.offsetHeight/2};
     	};
 	});
     

@@ -89,10 +89,10 @@
 	display: table-cell;
 	vertical-align: middle;
 }
-a.active {
+/* a.active {
 	background: #00AC7F;
 	color: #fff;
-}
+} */
 .weekly-menu-menubar > a {
 	text-decoration: none;
 	display:inline-block;
