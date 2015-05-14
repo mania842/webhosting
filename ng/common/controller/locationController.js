@@ -6,6 +6,9 @@
     		function ($scope, $location, $routeParams, webId, appService) {
     		
     	$scope.data = webId.getWeb();
+    	$scope.logResize = function () {
+    		$scope.$apply();
+        };
     	
     	$scope.clickOnPhone = function() {
     		if (appService.isDevice)

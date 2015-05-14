@@ -1,4 +1,4 @@
-<div class="center-screen location">
+<div class="center-screen location" on-size-changed="logResize">
   <h1>Location</h1>
   <div class="location-map" ng-style="setMapHeight()">
   	<my-map set-current="false" long="{{data.LOCATION.LONG}}" lang="{{data.LOCATION.LANG}}"/><br>

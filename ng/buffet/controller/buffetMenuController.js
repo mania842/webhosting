@@ -3,7 +3,7 @@
     'use strict';
     
     angular.module('buffetModule').controller('BuffetMenuController', 
-    		function ($document, $http, $rootScope, $scope, $location, $routeParams, webId, $anchorScroll, appService) {
+    		function ($document, $http, $rootScope, $scope, $location, $routeParams, webId, appService) {
     	$scope.isScrollTop = true;
     	$scope.data = webId.loadWebData($routeParams.homepage);
     	$scope.vars = {
@@ -14,10 +14,6 @@
     	$scope.cachedPadding = 0;
     	
     	$scope.menuBarClick = function(day, index) {
-//    		$location.hash(day);
-//    	    // call $anchorScroll()
-//    	    $anchorScroll();
-    	    
     	    var someElement = angular.element(document.getElementById(day));
     	    console.log("someElement", someElement);
             $document.scrollToElementAnimated(someElement);
