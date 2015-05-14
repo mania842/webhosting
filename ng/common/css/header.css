@@ -144,10 +144,14 @@
 	color: #fff;
 }
 
+.web-landing-header-menubar-line span {
+	vertical-align: middle;
+}
+
 .web-landing-header-menubar-line .phone {
 	color: #ffc600;
 	font-weight: bold;
-	vertical-align: middle;
+	margin-right: .5em;
 }
 .web-landing-header-menubar-iconbox
 {
@@ -173,3 +177,11 @@
 {
 	text-align: right;
 }
+.web-landing-header .openhours {
+	color: white;
+}
+
+/* .web-landing-header .open {
+	text-shadow: #fff 0px 0px 1px,   #fff 0px 0px 1px,   #fff 0px 0px 1px,
+             #fff 0px 0px 1px,   #fff 0px 0px 1px,   #fff 0px 0px 1px;
+} */

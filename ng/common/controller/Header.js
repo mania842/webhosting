@@ -6,22 +6,24 @@
     'use strict';
 
     angular.module('myApp').controller('webHeaderController',
-    function ($scope, $window, webId, $location, $routeParams) {
+    function ($scope, $window, webId, $location, appService) {
 //    	$scope.hs = webId.loadWebData($routeParams.homepage);
     	$scope.hs = webId.getWeb();
     	$scope.webId = webId;
-//    	alert("hs" + $scope.hs);
     	
-    	$scope.logo = $scope.hs.DOMAIN ? "json/" + $scope.hs.DOMAIN + "/title.png" : undefined;
     	$scope.$on('service.webId:updated', function(event, data, domain) {
     		$scope.hs = data;
     		$scope.webId = webId;
-    		$scope.logo = "json/" + $scope.hs.DOMAIN + "/title.png";
 //    		$scope.$apply();
        	});
     	
     	$scope.redirectToHome = function() {
     		$location.path($scope.hs.HOME + $scope.hs.DOMAIN);
+    	};
+    	
+    	$scope.clickOnPhone = function() {
+    		if (appService.isDevice)
+    			window.open($scope.data.CALL);
     	};
     	
 //    	$scope.getHeaderBgStyle = function() {

@@ -47,6 +47,16 @@
 	});
 	
 	module.run(function($rootScope, $location, webId, appService) {
+		Date.prototype.stdTimezoneOffset = function() {
+            var jan = new Date(this.getFullYear(), 0, 1);
+            var jul = new Date(this.getFullYear(), 6, 1);
+            return Math.max(jan.getTimezoneOffset(), jul.getTimezoneOffset());
+        };
+
+        Date.prototype.dst = function() {
+            return this.getTimezoneOffset() < this.stdTimezoneOffset();
+        };
+        
 		if ($location.absUrl().indexOf("gainesvillehomecooking.com") > -1) {
 			$location.path('/buffet/menu/gainesvillehomecooking');
 			webId.loadWebData("gainesvillehomecooking");
@@ -73,34 +83,6 @@
             });
     	};
     });
-	
-//	module.directive('resize', function ($window) {
-//	    return function ($scope, element) {
-//	        var w = angular.element($window);
-////	        $scope.getWindowDimensions = function () {
-////	            return {
-////	                'h': w.height(),
-////	                'w': w.width()
-////	            };
-////	        };
-////	        $scope.$watch($scope.getWindowDimensions, function (newValue, oldValue) {
-////	        	$scope.windowHeight = newValue.h;
-////	        	$scope.windowWidth = newValue.w;
-////
-////	        	$scope.style = function () {
-////	                return {
-////	                    'height': (newValue.h - 100) + 'px',
-////	                    'width': (newValue.w - 100) + 'px'
-////	                };
-////	            };
-////
-////	        }, true);
-//
-//	        w.bind('resize', function () {
-//	        	$scope.$apply();
-//	        });
-//	    };
-//	});
 	
 	module.directive('onSizeChanged', function ($window) {
 	    return {

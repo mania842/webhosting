@@ -99,7 +99,38 @@
 	"LOCATION" : {
 		"MAP" : "https://www.google.com/maps/place/Gainesville+Home+Cooking/@34.296189,-83.83918,15z/data=!4m2!3m1!1s0x0:0xd7d439217d2283fb",
 		"LONG" : "34.296189",
-		"LANG" : "-83.83918"
+		"LANG" : "-83.83918",
+		"TIMEZONE" : "EST",
+		"OPEN_DAY" : [{
+			"DAY" : "MON",
+			"OPEN" : "11:00 AM",
+			"CLOSE" : "8:30 PM"
+		}, {
+			"DAY" : "TUE",
+			"OPEN" : "11:00 AM",
+			"CLOSE" : "8:30 PM"
+		}, {
+			"DAY" : "WED",
+			"OPEN" : "11:00 AM",
+			"CLOSE" : "8:30 PM"
+		}, {
+			"DAY" : "THU",
+			"OPEN" : "11:00 AM",
+			"CLOSE" : "8:30 PM"
+		}, {
+			"DAY" : "FRI",
+			"OPEN" : "11:00 AM",
+			"CLOSE" : "8:30 PM"
+		}, {
+			"DAY" : "SAT",
+			"OPEN" : "11:00 AM",
+			"CLOSE" : "8:30 PM"
+		}, {
+			"DAY" : "SUN",
+			"OPEN" : "11:00 AM",
+			"CLOSE" : "8:00 PM"
+		}
+		]
 	}
 	
 }

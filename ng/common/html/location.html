@@ -5,10 +5,30 @@
   </div>
   <a href="{{data.LOCATION.MAP}}">View Larger Map</a>
   
-  <h1>{{data.TITLE}}</h1>
-  <pre>{{data.getAddress2()}}</pre>
+  <div>
+  	<img class="logo" ng-src="{{$root.admin.web.logo}}" ng-show="$root.admin.web.logo"/>
+  </div>
+  <pre class="address">{{data.getAddress2()}}</pre>
   <span class="phone" ng-click="clickOnPhone()">{{data.PHONE}}</span>
+  
+  <div class="checkOpen">
+  	<span class="open" ng-show="$root.admin.appService.isOpen">Open Today</span>
+  	<span class="close" ng-show="!$root.admin.appService.isOpen">Close Today</span>
+  </div>
+  <table class="openhours-table">
+  	<thead>
+  		<tr>
+  			<th class="indicator" ng-show="openHoursDP.length > 1"></th>
+  			<th>Day</th>
+  			<th>Open Hours</th>
+  		</tr>
+  	</thead>
+  	<tr ng-repeat="openhour in openHoursDP" ng-class="{even: $index%2 == 1}">
+  		<td class="indicator" ng-show="openHoursDP.length > 1"><span ng-show="openhour.INCLUDING_DAYS.indexOf(vars.todayStr) > -1">&#9658;</span></td>
+  		<td>{{openhour.DAY}}</td>
+  		<td>{{openhour.HOURS}}</td>
+  	</tr>
+  </table>
   <br><br><br>
-  <!-- <a class="phone" href='{{data.CALL}}'>{{data.PHONE}}</a><br> -->
   
 </div>

@@ -34,6 +34,10 @@ button:focus,
 textarea:focus {
     outline: none;
 }
+table {
+	border:none;
+	border-collapse: collapse;
+}
  
 fieldset {
     border-radius: 5px;

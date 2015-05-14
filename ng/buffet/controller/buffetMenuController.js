@@ -19,8 +19,6 @@
             $document.scrollToElementAnimated(someElement);
     	};
     	
-		$anchorScroll.yOffset = appService.em(8);
-		
     	$scope.getTop = function() {
     		var elementResult = document.getElementsByClassName('weekly-menu-fix')[0];
     		$scope.cachedOffSet = elementResult.offsetTop + elementResult.offsetHeight;
