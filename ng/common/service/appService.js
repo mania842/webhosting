@@ -110,8 +110,6 @@
     	var checkTime = function() {
     		setTimeout(function() {
     			if (currentTime) {
-//    				console.log("closeTime.getDate()", closeTime.getDate());
-//        			console.log("currentTime.getDate()", currentTime.getDate());
         			if (closeTime.getDate() != currentTime.getDate()) {
         				webId.dateUpdated();
         				$rootScope.$apply();
@@ -123,8 +121,6 @@
     				service.isOpen = isOpen();
     				$rootScope.$apply();
     			}
-//    			var currentTime = getCurrentUTCTime(timezone);
-//        		service.time = currentTime.toLocaleString();
         		
                 checkTime(); // schedule another update
     		}, 1000);

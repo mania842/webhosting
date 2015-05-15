@@ -16,6 +16,19 @@
 	position: inherit;
 }
 
+.main-menu .head {
+	font-size: 1.2em;
+	padding-right: 1em;
+	border-right: 1px solid #008537;
+	color: #008537;
+	font-weight: bold;
+	width: 3em;
+	text-align: center;
+}
+.main-menu .body {
+	padding-left: 1em;
+}
+
 .daily-menu-fix {
 	position: fixed;
 	margin: 0em;
@@ -74,6 +87,7 @@
 	/* position: relative; */
 	position: fixed;
 	z-index: 1000;
+	height: 2.2em;
 	
 /* 	background: rgba(0, 133, 55, 0.88); */
 	box-shadow: 0px 0px 2px #999;
@@ -88,6 +102,18 @@
 .weekly-menu-menubar {
 	display: table-cell;
 	vertical-align: middle;
+}
+.weekly-menu-menubar .today {
+	color: #ffc600;
+	font-weight: bold;
+}
+.main-menu .today .head {
+	color: #0004b2;
+	border-right: 1px solid #0004b2;
+}
+.main-menu .weekly-menu-card-style.today {
+	background: rgba(182, 184, 255, 0.2);
+	border: 1px solid #0004b2;
 }
 /* a.active {
 	background: #00AC7F;
@@ -121,8 +147,7 @@
 {
 	border: 1px solid #000;
 	padding: .5em 1em;
-	/* background-color: #F7F7F7; */
-	box-shadow:.3em .3em .3em gray;
+	box-shadow:.2em .2em .2em #a0a0a0;
 	font-size: .9em;
 	/* overflow: auto; */
 	border-radius: 0.5em;

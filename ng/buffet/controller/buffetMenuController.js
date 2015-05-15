@@ -13,11 +13,11 @@
     	
     	$scope.cachedPadding = 0;
     	
-    	$scope.menuBarClick = function(day, index) {
-    	    var someElement = angular.element(document.getElementById(day));
-    	    console.log("someElement", someElement);
-            $document.scrollToElementAnimated(someElement);
-    	};
+//    	$scope.menuBarClick = function(day, index) {
+//    		console.log(day, index);
+//    	    var someElement = angular.element(document.getElementById(day));
+//            $document.scrollToElementAnimated(someElement);
+//    	};
     	
     	$scope.getTop = function() {
     		var elementResult = document.getElementsByClassName('weekly-menu-fix')[0];
@@ -61,10 +61,18 @@
         	} else {
         		data.DAILY_MENU.collapsed = false;
         	}
-        	
-        	
         };
         
+        $scope.repeatComplete = function() {
+            setTimeout(function() {
+            	document.getElementById('nav' + $scope.data.todayStr).click();
+            }, 100);
+        };
+        
+
+        
+//        $document.scrollToElement(someElement, offset, duration);
+
 	});
     
 
