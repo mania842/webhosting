@@ -9,7 +9,8 @@
   	<img class="logo" ng-src="{{$root.admin.web.logo}}" ng-show="$root.admin.web.logo"/>
   </div>
   <pre class="address">{{data.getAddress2()}}</pre>
-  <span class="phone" ng-click="clickOnPhone()">{{data.PHONE}}</span>
+  <a class="phone" href='{{data.CALL}}' ng-show="$root.admin.appService.isDevice">{{data.PHONE}}</a>
+  <span class="phone" ng-show="!$root.admin.appService.isDevice">{{data.PHONE}}</span>
   
   <div class="checkOpen">
   	<span class="open" ng-show="$root.admin.appService.isOpen">Open Today</span>

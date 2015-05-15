@@ -21,10 +21,6 @@
     		$location.path($scope.hs.HOME + $scope.hs.DOMAIN);
     	};
     	
-    	$scope.clickOnPhone = function() {
-    		if (appService.isDevice)
-    			window.open($scope.data.CALL);
-    	};
     	
 //    	$scope.getHeaderBgStyle = function() {
 //    		return {

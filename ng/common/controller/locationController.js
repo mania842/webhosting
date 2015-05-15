@@ -17,11 +17,6 @@
         $scope.openHours = $scope.data.openHours;
         $scope.openHoursDP = $scope.data.openHoursDP;
         
-    	$scope.clickOnPhone = function() {
-    		if (appService.isDevice)
-    			window.open($scope.data.CALL);
-    	};
-    	
     	$scope.setMapHeight = function() {
     		var winHeight = window.innerHeight;
     		var header = document.getElementById('web-landing-header');

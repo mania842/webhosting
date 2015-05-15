@@ -27,8 +27,8 @@
 		<popdown></popdown> -->
 	</div>
 	<div class="web-landing-header-menubar-line">
-		<!-- <a class="phone" href='{{hs.CALL}}'>{{hs.PHONE}}</a> -->
-		<span class="phone" ng-click="clickOnPhone()">{{hs.PHONE}}</span>
+		<a class="phone" href='{{hs.CALL}}' ng-show="$root.admin.appService.isDevice">{{hs.PHONE}}</a>
+		<span class="phone" ng-show="!$root.admin.appService.isDevice">{{hs.PHONE}}</span>
 		<span class="open" ng-show="$root.admin.appService.isOpen">Open</span>
   		<span class="close" ng-show="!$root.admin.appService.isOpen">Close</span>
   		<span class="openhours">: {{$root.admin.web.openHours[$root.admin.web.todayStr].OPEN_HOURS_STR}}</span>
