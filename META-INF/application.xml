@@ -1,10 +1,10 @@
 <application>
-  <display-name>webhosting</display-name>
+  <display-name>gainseville</display-name>
 
   <module>
     <web>
-      <web-uri>webhosting.war</web-uri>
-      <context-root>/webhosting</context-root>
+      <web-uri>gainseville.war</web-uri>
+      <context-root>/gainseville</context-root>
     </web>
   </module>
 
